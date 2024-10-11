@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Muller;
+    src: url('../fonts/MullerRegular.otf');
+}
+
+@font-face {
+    font-family: MullerBold;
+    src: url('../fonts/MullerBold.otf');
+}
+
+@font-face {
+    font-family: MullerExtraBold;
+    src: url('../fonts/MullerExtraBold.otf');
+}
+
+body {
+    font-family: Muller, sans-serif;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 13.8px 1.2px rgba(152, 152, 152, 0.2);
+    padding: 16px 0 15px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 489px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(164, 107, 0);
+    line-height: 1;
+}
