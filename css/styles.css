@@ -56,3 +56,79 @@ body {
     color: rgb(164, 107, 0);
     line-height: 1;
 }
+
+
+.main {
+    margin: 132px 0 81px 0;
+}
+
+.main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.main-info {
+    max-width: 622px;
+}
+
+.main-info h1 {
+    font-size: 45px;
+    font-family: MullerExtraBold, sans-serif;
+    color: rgb(185, 145, 80);
+    line-height: 1.222;
+}
+
+.main-info h1 span {
+    color: #ffaf18;
+
+}
+
+
+.main-advantages {
+    margin-top: 13px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.advantage {
+    max-width: 306px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 47px;
+}
+
+.advantage-text {
+    margin-left: 16px;
+}
+
+.advantage-title {
+    font-size: 16px;
+    font-family: MullerExtraBold, sans-serif;
+    color: rgb(255, 175, 24);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.advantage-description {
+    font-size: 16px;
+    color: rgb(185, 145, 80);
+}
+
+.main-action {
+    margin-top: 60px;
+}
+
+.btn {
+    border: none;
+    background-color: rgb(255, 175, 24);
+    width: 224px;
+    outline: none;
+    padding: 22px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: MullerBold, sans-serif;
+    color: rgb(56, 36, 0);
+}
