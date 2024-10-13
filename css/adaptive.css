@@ -1,0 +1,247 @@
+/* 1024 -1229 */
+@media screen and (max-width: 1229px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .main-image {
+         width: 400px;
+    }
+
+    .main-image img {
+        max-width: 100%;
+    }
+
+    .products-items {
+        justify-content: center;
+    }
+
+    .product {
+        margin: 12px;
+    }
+
+    .order-form {
+        margin-left: 45px;
+    }
+
+    .order .container {
+        max-width: 1024px;
+    }
+
+}
+
+/* 768 - 1024 */
+@media screen and (max-width: 1023px) {
+    .menu ul {
+        width: 420px;
+    }
+
+    .main .container {
+        flex-direction: column;
+
+    }
+
+    .main-image {
+        order: 1;
+        margin-bottom: 30px;
+    }
+
+    .main-info {
+        order: 2;
+    }
+
+    .main {
+        margin-top: 70px;
+    }
+
+    .main h1 {
+        text-align: center;
+    }
+
+    .main-action {
+        text-align: center;
+    }
+
+    .products {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+
+    .order {
+        padding-top: 60px;
+        position: relative;
+    }
+
+    .order-image {
+        position: absolute;
+        z-index: -1;
+        right: calc(50% - 400px);
+    }
+
+    .order-image img {
+        position: relative;
+    }
+
+    .order .container {
+        justify-content: center;
+    }
+
+}
+
+/* 425 - 767 */
+@media screen and (max-width: 767px) {
+
+    .footer .container {
+        justify-content: space-between;
+    }
+
+    .rights {
+        margin-left: 0;
+    }
+
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 390px;
+    }
+
+    .menu {
+        order: 3;
+        margin-top: 15px;
+        flex-basis: 100%;
+    }
+
+    .menu ul {
+        max-width: 390px;
+    }
+
+    .cart {
+        margin-left: 20px;
+    }
+
+    .main-info h1 {
+        line-height: 45px;
+    }
+
+    .main-advantages {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .order .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-text-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .order-text-message {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .order-form {
+        margin-left: 0;
+
+    }
+
+}
+
+/* 425 - 656 */
+@media screen and (max-width: 656px) {
+
+    .main-advantages {
+        max-width: 306px;
+    }
+
+
+}
+
+/* 375 - 424 */
+@media screen and (max-width: 424px) {
+
+    .menu {
+        display: none;
+    }
+
+    .main-image {
+        width: 100%;
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        background: #000000C9;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 auto;
+    }
+
+    .menu-item {
+        margin: 15px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger svg {
+        width: 36px;
+        height: 36px;
+        fill: #fad7a7;
+        margin-right: 20px;
+    }
+
+    .menu.open {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu .close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: rgb(164, 107, 0);
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+}
+
+/* 374 - 320 */
+@media screen and (max-width: 374px) {
+
+    .main-info h1 {
+        font-size: 38px;
+    }
+
+    .order-input {
+        width: 290px;
+    }
+
+    .order .btn {
+        width: 290px;
+    }
+
+    .order-form {
+        text-align: center;
+    }
+
+    .rights {
+        margin-left: 20px;
+    }
+
+}

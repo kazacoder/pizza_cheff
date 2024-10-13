@@ -138,7 +138,7 @@ body {
 }
 
 .products {
-    margin: 80px 0 120px 0;
+    padding: 80px 0 120px 0;
 }
 
 .products-title {
@@ -256,12 +256,13 @@ body {
 .order-image {
     width: 282px;
     position: relative;
+    margin-left: 78px;
 }
 
 .order-image img {
     position: absolute;
     bottom: -35px;
-    left: 78px;
+    left: 0;
 }
 
 .footer {
@@ -281,5 +282,10 @@ body {
     margin-left: 358px;
 }
 
+.burger {
+    display: none;
+}
 
-
+.close {
+    display: none;
+}
