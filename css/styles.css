@@ -76,13 +76,16 @@ body {
 .main-info h1 {
     font-size: 45px;
     font-family: MullerExtraBold, sans-serif;
-    color: rgb(185, 145, 80);
     line-height: 1.222;
 }
 
-.main-info h1 span {
-    color: #ffaf18;
 
+.double-title {
+    color: rgb(185, 145, 80);
+}
+
+.double-title span {
+    color: #ffaf18;
 }
 
 
@@ -131,4 +134,152 @@ body {
     font-size: 16px;
     font-family: MullerBold, sans-serif;
     color: rgb(56, 36, 0);
+    cursor: pointer;
 }
+
+.products {
+    margin: 80px 0 120px 0;
+}
+
+.products-title {
+    font-size: 35px;
+    font-family: MullerBold, sans-serif;
+    color: rgb(189, 152, 92);
+    text-align: center;
+}
+
+.products-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    justify-content: space-between;
+}
+
+.product {
+    width: 282px;
+    box-shadow: 0px 3px 13.8px 1.2px rgba(152, 152, 152, 0.2);
+    background-color: white;
+    text-align: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+.product-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 18px;
+    font-family: MullerBold, sans-serif;
+    color: rgb(56, 36, 0);
+}
+
+
+.product-text {
+    font-size: 14px;
+    color: rgb(24, 26, 26);
+    line-height: 1.286;
+    height: 49px;
+    margin: 14px 0 15px 0;
+}
+
+.product-action .btn {
+    width: 242px;
+    height: 50px;
+    padding: 17px;
+}
+
+.order {
+    padding: 120px 0 115px 0;
+    overflow: hidden;
+}
+
+.order .container {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.order-text {
+    max-width: 384px;
+}
+
+.order-text-title {
+    font-size: 35px;
+    font-family: MullerExtraBold, sans-serif;
+    font-weight: bold;
+    line-height: 1.286;
+    text-align: left;
+    margin-bottom: 65px;
+}
+
+.order-text-message {
+    font-size: 16px;
+    color: rgb(185, 145, 80);
+    line-height: 1.5;
+}
+
+.order-form {
+    margin-left: 122px;
+    max-width: 330px;
+}
+
+.order-input {
+    border-width: 1px;
+    border-color: rgb(185, 145, 80);
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    width: 330px;
+    height: 60px;
+    font-size: 18px;
+    color: rgb(119, 94, 49);
+    padding: 23px 22px 24px 22px;
+    outline: none;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.order-input::placeholder {
+    color: rgb(203, 168, 110);
+}
+
+.order .btn {
+    width: 330px;
+    padding: 23px 22px 24px 22px;
+    height: 60px;
+}
+
+.order-image {
+    width: 282px;
+    position: relative;
+}
+
+.order-image img {
+    position: absolute;
+    bottom: -35px;
+    left: 78px;
+}
+
+.footer {
+    box-shadow: 0px 0px 13.8px 1.2px rgba(152, 152, 152, 0.2);
+    background-color: rgb(255, 255, 255);
+    padding: 16px 0 15px 0;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+}
+
+.rights {
+    font-size: 12px;
+    color: rgb(186, 179, 179);
+    margin-left: 358px;
+}
+
+
+
