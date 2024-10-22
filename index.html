@@ -156,7 +156,7 @@
                 <div class="product-title">Бекон и Сосиски</div>
                 <div class="product-text">Бекон, сыр, сосиски, ананас, томатная паста</div>
                 <div class="product-action">
-                    <button class="btn">В корзину</button>
+                    <button class="btn" id="no-touch">В корзину</button>
                 </div>
             </div>
             <div class="product">
@@ -229,8 +229,8 @@
         </div>
         <div class="order-form">
             <form action="">
-                <input type="text" class="order-input" placeholder="Ваше имя">
-                <input type="text" class="order-input" placeholder="Адрес доставки">
+                <input type="text" class="order-input" id="name-input" placeholder="Ваше имя">
+                <input type="text" class="order-input" placeholder="Адрес доставки" name="address">
                 <input type="text" class="order-input" placeholder="Телефон">
                 <button class="btn">Оформить заказ</button>
             </form>
@@ -246,41 +246,11 @@
         <div class="logo">
             <img src="images/logo.png" alt="Лого">
         </div>
-        <div class="rights">Все права защищены, 2020</div>
+        <div class="rights">Все права защищены, <span>2020</span></div>
     </div>
 </footer>
 
-<script>
-    document.getElementById('burger').onclick = function () {
-        document.getElementById('menu').classList.add('open')
-    }
-
-    document.querySelectorAll('#menu *').forEach((item) => {
-        item.onclick = () => {
-            document.getElementById('menu').classList.remove('open')
-        }
-    })
-
-    document.getElementById('pizzas-link').onclick = function () {
-        document.getElementById('pizzas').scrollIntoView({behavior: "smooth"});
-    }
-
-    document.getElementById('order-link').onclick = function () {
-        document.getElementById('order').scrollIntoView({behavior: "smooth"});
-    }
-
-    document.getElementById('drinks-link').onclick = function () {
-        document.getElementById('pizzas').scrollIntoView({behavior: "smooth"});
-    }
-
-    document.getElementById('contacts-link').onclick = function () {
-        document.getElementById('order').scrollIntoView({behavior: "smooth"});
-    }
-
-</script>
+<script src="scripts/script.js"></script>
 
 </body>
 </html>
-
-
-<!--1:57:38-->
