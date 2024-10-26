@@ -126,7 +126,6 @@ body {
 }
 
 .btn {
-    border: none;
     background-color: rgb(255, 175, 24);
     width: 224px;
     outline: none;
@@ -136,6 +135,9 @@ body {
     font-family: MullerBold, sans-serif;
     color: rgb(56, 36, 0);
     cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    text-align: center;
 }
 
 .products {
@@ -289,4 +291,32 @@ body {
 
 .close {
     display: none;
+}
+
+
+.hvr-shutter-in-horizontal:before {
+    background: rgb(255, 175, 24);
+    color: black;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.hvr-shutter-in-horizontal:hover {
+    background: white;
+    color: rgb(255, 175, 24);
+    border: 1px solid rgb(255, 175, 24);
+    box-sizing: border-box;
+}
+
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.parallax-window {
+    min-height: 600px;
+    background: transparent;
 }

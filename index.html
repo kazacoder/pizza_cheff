@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizza Cheff</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/adaptive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +67,7 @@
 
 <section class="main">
     <div class="container">
-        <div class="main-info">
+        <div class="main-info animate__animated animate__backInLeft">
             <h1 class="double-title">
                 Самая вкусная пицца в мире <span>только в Pizza Cheff</span>
             </h1>
@@ -114,23 +118,26 @@
                 </div>
             </div>
             <div class="main-action">
-                <button class="btn" id="choose-pizza">Выбрать пиццу</button>
+                <a href="#test-popup" class="btn hvr-shutter-in-horizontal no-touch" id="open-popup-link">Выбрать пиццу</a>
+<!--                <button class="btn hvr-shutter-in-horizontal no-touch" id="choose-pizza">Выбрать пиццу</button>-->
             </div>
         </div>
-        <div class="main-image">
+        <div class="main-image animate__animated animate__backInRight">
             <img src="images/pizza_big.png" alt="Big pizza image">
         </div>
     </div>
 </section>
+
+<div class="parallax-window" data-parallax="scroll" data-image-src="images/pizza_walp.jpg"></div>
 
 <section class="products">
     <div class="container">
         <h2 class="products-title" id="pizzas">Выберите свою любимую пиццу </h2>
         <div class="products-items">
             <div class="product">
-                <div class="product-image">
+                <a class="product-image" href="images/products/pizza_image_1.png">
                     <img src="images/products/pizza_image_1.png" alt="pizza image">
-                </div>
+                </a>
                 <div class="product-title">Мясная Делюкс</div>
                 <div class="product-text">Пепперони, лук, бекон, томатная паста, колбаски, перец, грибы, соус чили,
                     ананасы
@@ -146,7 +153,7 @@
                 <div class="product-title">Морская Премиум</div>
                 <div class="product-text">Перец, сыр, креветки, кальмары, мидии, лосось</div>
                 <div class="product-action">
-                    <button class="btn btn-add-to-cart">В корзину</button>
+                    <button class="btn btn-add-to-cart no-touch">В корзину</button>
                 </div>
             </div>
             <div class="product">
@@ -236,7 +243,7 @@
                 <button type="submit" class="btn" id="create-order">Оформить заказ</button>
             </form>
         </div>
-        <div class="order-image">
+        <div class="order-image wow animate__zoomIn">
             <img src="images/pizzzzza.png" alt="pizza">
         </div>
     </div>
@@ -251,7 +258,15 @@
     </div>
 </footer>
 
+<div id="test-popup" class="white-popup mfp-hide">
+    Popup content
+</div>
+
 <script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/wow.min.js"></script>
+<script src="scripts/jquery.magnific-popup.min.js"></script>
+<script src="scripts/parallax.min.js"></script>
+<script src="scripts/jquery.inputmask.min.js"></script>
 <script src="scripts/script_FE_pro_lesson_3_jquery.js"></script>
 <!--<script src="scripts/script.js"></script>-->
 

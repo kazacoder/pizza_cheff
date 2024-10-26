@@ -1,8 +1,18 @@
+var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animate__animated',
+    offset: 200,
+    mobile: true,
+    live: true
+})
+wow.init();
+
+
 $('h1').html('Самая крутая пицца ждет <span>только в нашем ресторане</span>');
 
 $('#pizzas').css('color', 'black');
 
-$('.btn:not(#no-touch)').css({
+$('.btn:not(.no-touch)').css({
     background: 'transparent',
     border: '1px solid rgb(255, 175, 24)',
     color: 'rgb(255, 175, 24)'
@@ -57,6 +67,7 @@ $('.btn-add-to-cart').on('click', function (event) {
     $('.order')[0].scrollIntoView({behavior: "smooth"});
 })
 
+$('#phone-input').inputmask({"mask": "(999) 999-9999"});
 
 $('#create-order').on('click', function (e) {
     e.preventDefault();
@@ -75,3 +86,15 @@ $('#create-order').on('click', function (e) {
         $('form')[0].submit();
     }
 })
+
+
+$('#open-popup-link').magnificPopup({
+    type:'inline',
+    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+});
+
+$('.product-image').magnificPopup({
+    type: 'image',
+});
+
+
