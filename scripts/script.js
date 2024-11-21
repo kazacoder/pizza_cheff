@@ -58,3 +58,4 @@ let products = document.getElementsByClassName('product');
 for (let i = 1; i < products.length; i = i + 2) {
     products[i].children[1].innerText += '*'
 }
+
