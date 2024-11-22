@@ -1,73 +1,83 @@
-var wow = new WOW({
-    boxClass: 'wow',
-    animateClass: 'animate__animated',
-    offset: 200,
-    mobile: true,
-    live: true
-})
-wow.init();
+$('document').ready(function () {
 
 
-$('h1').html('Самая крутая пицца ждет <span>только в нашем ресторане</span>');
-
-$('#pizzas').css('color', 'black');
-
-$('.btn:not(.no-touch)').css({
-    background: 'transparent',
-    border: '1px solid rgb(255, 175, 24)',
-    color: 'rgb(255, 175, 24)'
-})
-
-$('#name-input').attr('placeholder', 'Имя')
-
-$('.rights span').text(new Date().getFullYear())
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animate__animated',
+        offset: 200,
+        mobile: true,
+        live: true
+    })
+    wow.init();
 
 
-let products = $('.product');
+    $('h1').html('Самая крутая пицца ждет <span>только в нашем ресторане</span>');
 
-for (let i = 1; i < products.length; i = i + 2) {
-    let el = products.eq(i).children().eq(1)
-    el.text(el.text() + '**')
-}
+    $('#pizzas').css('color', 'black');
 
-$('#choose-pizza').on('click', function () {
-    $('.product')[0].scrollIntoView({behavior: "smooth"});
-})
+    $('.btn:not(.no-touch)').css({
+        background: 'transparent',
+        border: '1px solid rgb(255, 175, 24)',
+        color: 'rgb(255, 175, 24)'
+    })
+
+    $('#name-input').attr('placeholder', 'Имя')
+
+    $('.rights span').text(new Date().getFullYear())
 
 
-document.getElementById('burger').onclick = function () {
-    document.getElementById('menu').classList.add('open')
-}
+    let products = $('.product');
 
-document.querySelectorAll('#menu *').forEach((item) => {
-    item.onclick = () => {
-        document.getElementById('menu').classList.remove('open')
+    for (let i = 1; i < products.length; i++) {
+
+        if (i % 2 === 1) {
+
+            let el = products.eq(i).children().eq(1)
+            el.text(el.text() + '**')
+        }
+
+        let productTitle = products.eq(i).find('.product-title');
+        productTitle.text(productTitle.text().replace(/(Кури[а-я]+)(.+)/gi, '$2 из индейки'))
     }
-})
 
-document.getElementById('pizzas-link').onclick = function () {
-    document.getElementsByClassName('product')[0].scrollIntoView({behavior: "smooth"});
-}
-
-document.getElementById('order-link').onclick = function () {
-    document.getElementById('order').scrollIntoView({behavior: "smooth"});
-}
-
-document.getElementById('drinks-link').onclick = function () {
-    document.getElementById('pizzas').scrollIntoView({behavior: "smooth"});
-}
-
-document.getElementById('contacts-link').onclick = function () {
-    document.getElementById('order').scrollIntoView({behavior: "smooth"});
-}
+    $('#choose-pizza').on('click', function () {
+        $('.product')[0].scrollIntoView({behavior: "smooth"});
+    })
 
 
-$('.btn-add-to-cart').on('click', function (event) {
-    $('#product-input').val($(event.target).parents('.product').find('.product-title').text());
-    $('.order')[0].scrollIntoView({behavior: "smooth"});
-})
+    document.getElementById('burger').onclick = function () {
+        document.getElementById('menu').classList.add('open')
+    }
 
-$('#phone-input').inputmask({"mask": "(999) 999-9999"});
+    document.querySelectorAll('#menu *').forEach((item) => {
+        item.onclick = () => {
+            document.getElementById('menu').classList.remove('open')
+        }
+    })
+
+    document.getElementById('pizzas-link').onclick = function () {
+        document.getElementsByClassName('product')[0].scrollIntoView({behavior: "smooth"});
+    }
+
+    document.getElementById('order-link').onclick = function () {
+        document.getElementById('order').scrollIntoView({behavior: "smooth"});
+    }
+
+    document.getElementById('drinks-link').onclick = function () {
+        document.getElementById('pizzas').scrollIntoView({behavior: "smooth"});
+    }
+
+    document.getElementById('contacts-link').onclick = function () {
+        document.getElementById('order').scrollIntoView({behavior: "smooth"});
+    }
+
+
+    $('.btn-add-to-cart').on('click', function (event) {
+        $('#product-input').val($(event.target).parents('.product').find('.product-title').text());
+        $('.order')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+    $('#phone-input').inputmask({"mask": "(999) 999-9999"});
 
 // $('#create-order').on('click', function (e) {
 //     e.preventDefault();
@@ -98,109 +108,115 @@ $('#phone-input').inputmask({"mask": "(999) 999-9999"});
 // })
 
 
-$('#create-order').on('click', function (e) {
-    e.preventDefault();
-    // console.log(1)
-    // console.warn(1)
-    // console.error(1)
-    // console.debug('ad')
-    //
+    $('#create-order').on('click', function (e) {
+        e.preventDefault();
+        // console.log(1)
+        // console.warn(1)
+        // console.error(1)
+        // console.debug('ad')
+        //
 
-    // return;
-    // debugger
+        // return;
+        // debugger
 
-    let hasError = false;
-    let nameInput = $('#name-input');
-    let addressInput = $('#address-input');
-    let phoneInput = $('#phone-input');
-    let productInput = $('#product-input');
+        let hasError = false;
+        let nameInput = $('#name-input');
+        let addressInput = $('#address-input');
+        let phoneInput = $('#phone-input');
+        let productInput = $('#product-input');
 
 
-    $('.order-input').css('border-color', 'rgb(185, 145, 80)');
+        $('.order-input').css('border-color', 'rgb(185, 145, 80)');
 
-    if(!nameInput.val()) {
-        nameInput.css('border-color', 'red');
-        hasError = true;
+        if(!nameInput.val().match(/^[А-Я][а-яеё]+\s*$/)) {
+            nameInput.css('border-color', 'red');
+            hasError = true;
+        }
+
+        if(!productInput.val()) {
+            productInput.css('border-color', 'red');
+            hasError = true;
+        }
+
+        if(!addressInput.val().match(/^[а-яА-ЯёЁ0-9,. ]+$/)) {
+            addressInput.css('border-color', 'red');
+            hasError = true;
+        }
+
+        if(!phoneInput.val().match(/^[А-Я][а-яеё]+\s*$/)) {
+            phoneInput.css('border-color', 'red');
+            hasError = true;
+        }
+
+        if (!hasError) {
+            console.time('ajax')
+            $.ajax({
+                method: 'POST',
+                url: 'https://testologia.ru/checkout',
+                data: {
+                    product: productInput.val(),
+                    name: addressInput.val(),
+                    phone: phoneInput.val(),
+
+                }
+            }).done(function (msg) {
+                console.timeEnd('ajax')
+                if (msg.success) {
+                    alert('Спасибо за заказ')
+                } else {
+                    alert('Что-то не так!')
+                }
+            })
+        }
+
+    })
+
+
+    $('#open-popup-link').magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+
+    $('.product-image').magnificPopup({
+        type: 'image',
+    });
+
+    $('.cookie-accept').on('click',function () {
+        $('.cookie').hide();
+        localStorage.setItem('cookieAccepted', '1');
+    })
+
+    if (!localStorage.getItem('cookieAccepted')) {
+        $('.cookie').show();
     }
 
-    if(!productInput.val()) {
-        productInput.css('border-color', 'red');
-        hasError = true;
+
+    let cookie = {
+        set: (name, value, options) => {
+            if (!name || !value) {
+                return null;
+            }
+            let string = `${name}=${value}`;
+            if(options) {
+                string += '; ' + options;
+            }
+
+            document.cookie = string;
+            return cookie;
+        },
+        get: (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        },
+        delete: (name) => {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        }
     }
 
-    if(!addressInput.val()) {
-        addressInput.css('border-color', 'red');
-        hasError = true;
-    }
 
-    if(!phoneInput.val()) {
-        phoneInput.css('border-color', 'red');
-        hasError = true;
-    }
 
-    if (!hasError) {
-       console.time('ajax')
-        $.ajax({
-           method: 'POST',
-           url: 'https://testologia.ru/checkout',
-           data: {
-               product: productInput.val(),
-               name: addressInput.val(),
-               phone: phoneInput.val(),
-
-           }
-       }).done(function (msg) {
-           console.timeEnd('ajax')
-           if (msg.success) {
-               alert('Спасибо за заказ')
-           } else {
-               alert('Что-то не так!')
-           }
-       })
-    }
 
 })
 
-
-$('#open-popup-link').magnificPopup({
-    type:'inline',
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-});
-
-$('.product-image').magnificPopup({
-    type: 'image',
-});
-
-$('.cookie-accept').on('click',function () {
-    $('.cookie').hide();
-    localStorage.setItem('cookieAccepted', '1');
-})
-
-if (!localStorage.getItem('cookieAccepted')) {
-    $('.cookie').show();
-}
-
-
-let cookie = {
-    set: (name, value, options) => {
-        if (!name || !value) {
-            return null;
-        }
-        let string = `${name}=${value}`;
-        if(options) {
-            string += '; ' + options;
-        }
-
-        document.cookie = string;
-        return cookie;
-    },
-    get: (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    },
-    delete: (name) => {
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    }
-}
 
