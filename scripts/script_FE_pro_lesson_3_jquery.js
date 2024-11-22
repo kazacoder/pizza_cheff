@@ -69,32 +69,96 @@ $('.btn-add-to-cart').on('click', function (event) {
 
 $('#phone-input').inputmask({"mask": "(999) 999-9999"});
 
+// $('#create-order').on('click', function (e) {
+//     e.preventDefault();
+//     let inputs = $('form input');
+//     let hasError = false;
+//     let productInput = document.getElementById('product-input');
+//     inputs.each((i) => {
+//         let input = $(inputs[i])
+//         if (input.val() === '') {
+//             alert(`Заполните поле ${input.attr('placeholder')}`);
+//             hasError = true
+//             return false;
+//         }
+//     })
+//     if (!hasError) {
+//         $.ajax( {
+//             method: 'GET',
+//             url: 'https://testologia.ru/test-cookie?name=' + productInput.value,
+//             xhrFields: {
+//                 withCredentials: true,
+//             }
+//         })
+//
+//         //
+//         // alert('Спасибо за Ваш заказ!')
+//         // $('form')[0].submit();
+//     }
+// })
+
+
 $('#create-order').on('click', function (e) {
     e.preventDefault();
-    let inputs = $('form input');
-    let hasError = false;
-    let productInput = document.getElementById('product-input');
-    inputs.each((i) => {
-        let input = $(inputs[i])
-        if (input.val() === '') {
-            alert(`Заполните поле ${input.attr('placeholder')}`);
-            hasError = true
-            return false;
-        }
-    })
-    if (!hasError) {
-        $.ajax( {
-            method: 'GET',
-            url: 'https://testologia.ru/test-cookie?name=' + productInput.value,
-            xhrFields: {
-                withCredentials: true,
-            }
-        })
+    // console.log(1)
+    // console.warn(1)
+    // console.error(1)
+    // console.debug('ad')
+    //
 
-        //
-        // alert('Спасибо за Ваш заказ!')
-        // $('form')[0].submit();
+    // return;
+    // debugger
+
+    let hasError = false;
+    let nameInput = $('#name-input');
+    let addressInput = $('#address-input');
+    let phoneInput = $('#phone-input');
+    let productInput = $('#product-input');
+
+
+    $('.order-input').css('border-color', 'rgb(185, 145, 80)');
+
+    if(!nameInput.val()) {
+        nameInput.css('border-color', 'red');
+        hasError = true;
     }
+
+    if(!productInput.val()) {
+        productInput.css('border-color', 'red');
+        hasError = true;
+    }
+
+    if(!addressInput.val()) {
+        addressInput.css('border-color', 'red');
+        hasError = true;
+    }
+
+    if(!phoneInput.val()) {
+        phoneInput.css('border-color', 'red');
+        hasError = true;
+    }
+
+    if (!hasError) {
+       console.time('ajax')
+        $.ajax({
+           method: 'POST',
+           url: 'https://testologia.ru/checkout',
+           data: {
+               product: productInput.val(),
+               name: addressInput.val(),
+               phone: phoneInput.val(),
+
+           }
+       }).done(function (msg) {
+           console.timeEnd('ajax')
+           if (msg.success) {
+               alert('Спасибо за заказ')
+           } else {
+               alert('Что-то не так!')
+           }
+       })
+    }
+
 })
 
 
