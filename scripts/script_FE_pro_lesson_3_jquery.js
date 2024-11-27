@@ -72,9 +72,25 @@ $('document').ready(function () {
     }
 
 
+
+
     $('.btn-add-to-cart').on('click', function (event) {
-        $('#product-input').val($(event.target).parents('.product').find('.product-title').text());
-        $('.order')[0].scrollIntoView({behavior: "smooth"});
+        let productTitle = $(event.target).parents('.product').find('.product-title').text().trim()
+        let cart = localStorage.getItem('cart');
+        let cartArray = []
+        if (cart) {
+            cartArray = JSON.parse(cart)
+        }
+
+        cartArray.push(productTitle);
+        localStorage.setItem('cart', JSON.stringify(cartArray));
+
+        console.log(cartArray)
+        console.log(localStorage)
+
+
+        // $('#product-input').val($(event.target).parents('.product').find('.product-title').text());
+        // $('.order')[0].scrollIntoView({behavior: "smooth"});
     })
 
     $('#phone-input').inputmask({"mask": "(999) 999-9999"});
@@ -143,10 +159,6 @@ $('document').ready(function () {
             hasError = true;
         }
 
-        if(!phoneInput.val().match(/^[А-Я][а-яеё]+\s*$/)) {
-            phoneInput.css('border-color', 'red');
-            hasError = true;
-        }
 
         if (!hasError) {
             console.time('ajax')
@@ -213,8 +225,6 @@ $('document').ready(function () {
             document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
         }
     }
-
-
 
 
 })
