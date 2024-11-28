@@ -24,15 +24,22 @@ document.getElementById('contacts-link').onclick = function () {
     document.getElementById('order').scrollIntoView({behavior: "smooth"});
 }
 
+let productInput = document.getElementById('product-input')
 let addToCardButtons = document.querySelectorAll('.btn-add-to-cart')
 
 addToCardButtons.forEach(item => {
-    item.onclick = function (e) {
-        let chosen_product = e.target.parentElement.previousElementSibling.previousElementSibling.innerText;
-        document.getElementById('product-input').value = chosen_product;
-        document.getElementsByClassName('order')[0].scrollIntoView({behavior: "smooth"});
-    }
+    item.onclick = function () {
+        console.log(1);
+        scrollToForm.call(this)
+    };
 })
+
+
+function scrollToForm() {
+    productInput.value = this.parentElement.previousElementSibling.previousElementSibling.innerText;
+    document.getElementsByClassName('order')[0].scrollIntoView({behavior: "smooth"});
+}
+
 
 
 document.getElementById('create-order').onclick = function (e) {
